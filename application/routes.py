@@ -7,3 +7,15 @@ from application.models import Student, Marks
 def home():
     students = Student.query.all()
     return render_template("Homepage.html", records=students)
+
+
+@app.route("/addStudent", methods=["GET","POST"])
+def addStudent():
+    form = AddStudent()
+    if request.method == 'POST':
+        name=form.student_name.data
+        newstudent = Student(name=name)
+        db.session.add(newstudent)
+        db.session.commit()
+        return redirect("/")
+    return render_template("Inputform.html", form=form)
