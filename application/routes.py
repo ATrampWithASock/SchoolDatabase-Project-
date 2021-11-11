@@ -30,3 +30,11 @@ def editStudent(student_ID):
         db.session.commit()
         return redirect("/")
     return render_template("EditStudent.html", form=form)
+
+
+@app.route("/deleteStudent/<int:student_ID>")
+def deleteStudent(student_ID):
+    student = Student.query.filter_by(student_ID=student_ID).first()
+    db.session.delete(student)
+    db.session.commit()
+    return redirect("/")
