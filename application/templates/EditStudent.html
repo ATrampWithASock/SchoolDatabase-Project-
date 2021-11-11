@@ -1,0 +1,20 @@
+<html>
+    <div class="form">
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <table border=1>
+                <tr>
+                    <td> {{ form.student_name.label}} </td>
+                </tr>
+                <tr>
+                    <td> {{ form.student_name }}</td>
+                </tr>
+            </table>
+            <br>
+            {{ form.submit }}
+        </form>
+    </div>
+    <br>
+    <br>
+    <a href="{{ url_for('home') }}"> cancel </a>
+</html>

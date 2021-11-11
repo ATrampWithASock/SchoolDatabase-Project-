@@ -4,7 +4,8 @@
         <br>
         <br>
         <br>
-        <a href=#>Add New Student</a>
+        <a href="{{ url_for('addStudent') }}">Add New Student</a>
+        <br>
         <br>
         <table border=1>
             <tr>
@@ -17,7 +18,7 @@
             <tr>
                 <td> {{ record.student_ID }} </td>
                 <td><a href=#> {{ record.name }} </a></td>
-                <td><a href=#> edit </a>
+                <td><a href="{{ url_for('editStudent', student_ID=record.student_ID) }}"> edit </a>
                     <a href=#> delete </a></td>
             </tr>
 
