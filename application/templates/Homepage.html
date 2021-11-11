@@ -1,0 +1,27 @@
+<html>
+    <center>
+        <h2>Student Information</h2>
+        <br>
+        <br>
+        <br>
+        <a href=#>Add New Student</a>
+
+        <table>
+            <tr>
+                <td> Student ID </td>
+                <td> Student Name </td>
+                <td> Operations </td>
+            </tr>
+            {% for record in records %}
+
+            <tr>
+                <td> {{ record.student_ID }} </td>
+                <td><a href=#> {{ record.name }} </a></td>
+                <td><a href=#> edit </a>
+                    <a href=#> delete </a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </center>
+</html>
