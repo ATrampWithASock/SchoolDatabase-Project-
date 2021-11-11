@@ -19,3 +19,14 @@ def addStudent():
         db.session.commit()
         return redirect("/")
     return render_template("Inputform.html", form=form)
+
+
+@app.route("/editStudent/<int:student_ID>", methods=["GET", "POST"])
+def editStudent(student_ID):
+    form = EditStudent()
+    student = Student.query.filter_by(student_ID = student_ID).first()
+    if request.method == "POST":
+        student.name = form.student_name.data
+        db.session.commit()
+        return redirect("/")
+    return render_template("EditStudent.html", form=form)
