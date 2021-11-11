@@ -1,4 +1,6 @@
 <html>
+    <center>
+    <h2>Input Student Information</h2>
     <div class="form">
         <form action={{ url_for("addStudent") }} method="POST">
             {{ form.hidden_tag() }}
@@ -17,4 +19,5 @@
     <br>
     <br>
     <a href="{{ url_for('home') }}"> cancel </a>
+    </center>
 </html>

@@ -38,3 +38,23 @@ def deleteStudent(student_ID):
     db.session.delete(student)
     db.session.commit()
     return redirect("/")
+
+
+@app.route("/studentInformation/<int:student_ID>")
+def studentInformation(student_ID):
+    data = Student.query.filter_by(student_ID=student_ID).first()
+    return render_template("StudentInformation.html", record=data)
+
+
+@app.route("/addMarks/<int:student_ID>", methods=["GET", "POST"])
+def addMarks(student_ID):
+    form = Marks
+    student=Student.query.filter_by(student_ID=student_ID).first()
+    if request.method == "POST":
+        subject=form.subject.data
+        marks=form.marks.data
+        newmarks=Marks(subject=subject, marks=marks)
+        db.session.add(newmarks)
+        db.session.commit()
+        return redirect("url_for(StudentInformation.html")
+    return render_template("InputMarks.html", form=form)

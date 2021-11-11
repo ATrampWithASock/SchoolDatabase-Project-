@@ -17,7 +17,7 @@
 
             <tr>
                 <td> {{ record.student_ID }} </td>
-                <td><a href=#> {{ record.name }} </a></td>
+                <td><a href="{{ url_for('studentInformation', student_ID=record.student_ID) }}"> {{ record.name }} </a></td>
                 <td><a href="{{ url_for('editStudent', student_ID=record.student_ID) }}"> edit </a>
                     <a href="{{ url_for('deleteStudent', student_ID=record.student_ID) }}"> delete </a></td>
             </tr>
@@ -25,4 +25,7 @@
             {% endfor %}
         </table>
     </center>
+    <br>
+    <br>
+    <p style="text-align: right;"><a href=#> all marks </a></p>
 </html>
