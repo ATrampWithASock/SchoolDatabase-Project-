@@ -1,0 +1,17 @@
+<html>
+    <a href="{{ url_for('home') }}"> home page </a>
+    <center>
+        <h2>Student Marks</h2>
+    </center>
+    <table border=1>
+        <tr>
+            <td> Student ID </td>
+            <td> Student Name </td>
+        </tr>
+        <tr>
+            <td> {{ record.student_ID }} </td>
+            <td> {{ record.name }} </td>
+        </tr>
+    </table>
+    <a href="{{ url_for('addMarks', student_ID=record.student_ID) }}"> add marks </a>
+</html>
