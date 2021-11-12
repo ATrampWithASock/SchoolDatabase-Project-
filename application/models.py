@@ -6,6 +6,7 @@ class Student(db.Model):
     ___tablename___ = "students"
     student_ID = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(50))
+    marks = db.relationship('Marks', backref='student')
 
 
 class Marks(db.Model):
