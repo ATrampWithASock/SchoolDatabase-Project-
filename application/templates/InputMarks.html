@@ -1,0 +1,29 @@
+<html>
+    <a href="{{ url_for('home') }}"> home </a>
+    <center>
+        <h2>Input Marks for Student</h2>
+        <div class="form">
+            <form action="{{ url_for('mAddMarks') }}" method="POST">
+                {{ form.hidden_tag }}
+                <table>
+                    <tr>
+                        <td> {{ form.student_ID.label }} </td>
+                        <td> {{ form.subject.label }} </td>
+                        <td> {{ form.marks.label }} </td>
+                    </tr>
+                    <tr>
+                        <td> {{ form.student_ID }} </td>
+                        <td> {{ form.subject }} </td>
+                        <td> {{ form.marks }} </td>
+                    </tr>
+                </table>
+                <br>
+                {{ form.submit }}
+            </form>
+        </div>
+    </center>
+    <br>
+    <br>
+    <a href="{{ url_for('marksTable') }}"> cancel </a>
+    <br>
+</html>

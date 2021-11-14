@@ -1,0 +1,33 @@
+<html>
+    <center>
+    <h2>Input Student Information</h2>
+    <div class="form">
+        <form action={{ url_for("addStudent") }} method="POST">
+            {{ form.hidden_tag() }}
+            <table border=1>
+                <tr>
+                    <td> {{ form.student_firstname.label}} </td>
+                    <td> {{ form.student_surname.label }} </td>
+                    <td> {{ form.subject.label }} </td>
+                    <td> {{ form.phone.label }} </td>
+                    <td> {{ form.email.label }} </td>
+                    <td> {{ form.address.label }} </td>
+                </tr>
+                <tr>
+                    <td> {{ form.student_firstname }}</td>
+                    <td> {{ form.student_surname }}</td>
+                    <td> {{ form.subject }} </td>
+                    <td> {{ form.phone }} </td>
+                    <td> {{ form.email }}</td>
+                    <td> {{ form.address }} </td>
+                </tr>
+            </table>
+            <br>
+            {{ form.submit }}
+        </form>
+    </div>
+    <br>
+    <br>
+    <a href="{{ url_for('home') }}"> cancel </a>
+    </center>
+</html>

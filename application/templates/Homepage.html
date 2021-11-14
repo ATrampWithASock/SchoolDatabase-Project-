@@ -1,0 +1,48 @@
+<html>
+    <center>
+        <h2>Student Information</h2>
+        <br>
+        <br>
+        <br>
+        <a href="{{ url_for('addStudent') }}">Add New Student</a>
+        <br>
+        <br>
+        <form action="{{url_for('filterRecords') }}" method="POST">
+            <select name="subject">
+                <option value="Physics"> Physics </option>
+                <option value="Chemistry"> Chemistry </option>
+                <option value="Biology"> Biology </option>
+                <option value="Maths"> Maths </option>
+                <option value="English"> English </option>
+                <option value="Spanish"> Spanish </option>
+                <option value="French"> French </option>
+                <option value="Geography"> Geography </option>
+                <option value="History"> History </option>
+                <option value="IT"> IT </option>
+                <option value="Sports Science"> Sports Science </option>
+                <option value="all"> All </option>
+            </select>
+            <input type="submit" value="Filter">
+        </form>
+        <table border=1>
+            <tr>
+                <td> Student ID </td>
+                <td> Student Name </td>
+                <td> Operations </td>
+            </tr>
+            {% for record in records %}
+
+            <tr>
+                <td> {{ record.student_ID }} </td>
+                <td><a href="{{ url_for('studentInformation', student_ID=record.student_ID) }}"> {{ record.firstname }} {{ record.surname }} </a></td>
+                <td><a href="{{ url_for('editStudent', student_ID=record.student_ID) }}"> edit </a>
+                    <a href="{{ url_for('deleteStudent', student_ID=record.student_ID) }}"> delete </a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </center>
+    <br>
+    <br>
+    <!---<p style="text-align: right;"><a href="{{ url_for('marksTable') }}"> all marks </a></p>-->
+</html>

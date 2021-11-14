@@ -1,0 +1,4 @@
+__pycache__/
+_pytest_chache/
+.coverage
+*.db
