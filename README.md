@@ -10,7 +10,7 @@ A Repository containing my files and commits for a school database for my first 
 
 
 ## Database Design <a name="databasedesign"></a>
-![Old Database ERD] (/readme_images/old_School_Database_ERD.png)
+![Old Database ERD](/readme_images/old_School_Database_ERD.png)
 
 As you can see from the above picture I had a relational database that in my mind had all the fields necessary to function. I felt the most important aspect of the database was to show the marks and subjects and how they relate to the students. With a name and ID that was all that was needed to make this functional and most of the interesting side of the database would take place in the marks.
 
