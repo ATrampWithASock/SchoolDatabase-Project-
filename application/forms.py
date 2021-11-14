@@ -2,7 +2,11 @@ from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField, SelectField, SubmitField
 
 class AddStudent(FlaskForm):
-    student_name = StringField("Name")
+    student_firstname = StringField("First Name")
+    student_surname = StringField("Surname")
+    phone = StringField("Mobile Number")
+    email = StringField("Email Address")
+    address = StringField("Address")
     submit = SubmitField("Add Student")
 
 
@@ -14,7 +18,11 @@ class Marks(FlaskForm):
 
 
 class EditStudent(FlaskForm):
-    student_name = StringField("Name")
+    student_firstname = StringField("First Name")
+    student_surname = StringField("Surname")
+    phone = IntegerField("Mobile Number")
+    email = StringField("Email Address")
+    address = StringField("Address")
     submit = SubmitField("Edit Student")
 
 

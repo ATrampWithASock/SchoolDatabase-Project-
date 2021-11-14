@@ -13,8 +13,12 @@ def home():
 def addStudent():
     form = AddStudent()
     if request.method == 'POST':
-        name=form.student_name.data
-        newstudent = Student(name=name)
+        firstname=form.student_firstname.data
+        surname=form.student_surname.data
+        phone=form.phone.data
+        email=form.email.data
+        address=form.address.data
+        newstudent = Student(firstname=firstname, surname=surname, phone=phone, email=email, address=address)
         db.session.add(newstudent)
         db.session.commit()
         return redirect("/")
@@ -26,7 +30,11 @@ def editStudent(student_ID):
     form = EditStudent()
     student = Student.query.filter_by(student_ID = student_ID).first()
     if request.method == "POST":
-        student.name = form.student_name.data
+        student.firstname = form.student_firstname.data
+        student.surname = form.student_surname.data
+        student.phone = form.phone.data
+        student.email = form.email.data
+        student.address = form.address.data
         db.session.commit()
         return redirect("/")
     return render_template("EditStudent.html", form=form)

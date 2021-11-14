@@ -5,7 +5,11 @@ class Student(db.Model):
     """Students"""
     ___tablename___ = "students"
     student_ID = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(50))
+    firstname = db.Column(db.String(50))
+    surname = db.Column(db.String(50))
+    phone = db.Column(db.String(11))
+    email = db.Column(db.String(50))
+    address = db.Column(db.String(50))
     marks = db.relationship('Marks', backref='student')
 
 

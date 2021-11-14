@@ -1,18 +1,28 @@
 <html>
-    <a href="{{ url_for('home') }}"> home page </a>
     <center>
-        <h2>Student Marks</h2>
-    </center>
+        <h2>Student Information</h2>
+    
     <table border=1>
         <tr>
             <td> Student ID </td>
-            <td> Student Name </td>
+            <td> Student First Name </td>
+            <td> Student Surname </td>
+            <td> Student Contact Number </td>
+            <td> Student Email </td>
+            <td> Student Address </td>
         </tr>
         <tr>
             <td> {{ record.student_ID }} </td>
-            <td> {{ record.name }} </td>
+            <td> {{ record.firstname }} </td>
+            <td> {{ record.surname }} </td>
+            <td> {{ record.phone }} </td>
+            <td> {{ record.email }} </td>
+            <td> {{ record.address }}</td>
         </tr>
     </table>
+    <br>
+    <a href="{{url_for('home')}}">back</a>
+    </center>
     <!--<a href="{{ url_for('addMarks', student_ID=record.student_ID) }}"> add marks </a>-->
     <br>
     <!--<a href="{{ url_for('mAddMarks') }}"> manually add marks </a>-->
