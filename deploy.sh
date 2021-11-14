@@ -27,7 +27,7 @@ environment=db_uri=$db_uri
 environment=secretkey=$secretkey
 environment=GUNICORN_CMD_ARGS='--workers=4 --bind=0.0.0.0:5000'
 ExecStart=/bin/sh -c 'cd /home/jenkins/.jenkinsworkspace/SchoolDatabase-Project- && gunicorn3
-app:app'
+SchoolDatabase-Project-:app'
 [install]
 WantedBy=multi-user.target
 EOF
