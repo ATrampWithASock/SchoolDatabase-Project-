@@ -6,10 +6,11 @@ class AddStudent(FlaskForm):
     submit = SubmitField("Add Student")
 
 
-class Marks(FlaskForm):
-    subject = SelectField("Subject", choices=[("physics","Physics"), ("chemistry","Chemistry"), ("biology","Biology"), ("maths","Maths"), ("english","English"), ("spanish","Spanish"), ("french","French"), ("geography","Geography"), ("history","History"), ("IT","IT"), ("sport_science","Sport Science")])
+"""class Marks(FlaskForm):
+    student_ID = IntegerField("Student ID")
+    subject = StringField("Subject", choices=[("physics","Physics"), ("chemistry","Chemistry"), ("biology","Biology"), ("maths","Maths"), ("english","English"), ("spanish","Spanish"), ("french","French"), ("geography","Geography"), ("history","History"), ("IT","IT"), ("sport_science","Sport Science")])
     marks = IntegerField("Marks")
-    submit = SubmitField("Add Marks")
+    submit = SubmitField("Add Marks")"""
 
 
 class EditStudent(FlaskForm):
@@ -17,7 +18,8 @@ class EditStudent(FlaskForm):
     submit = SubmitField("Edit Student")
 
 
-class EditMarks(FlaskForm):
+"""class EditMarks(FlaskForm):
+    student_ID = IntegerField("Student ID")
     subject = SelectField("Subject", choices=[("physics","Physics"), ("chemistry","Chemistry"), ("biology","Biology"), ("maths","Maths"), ("english","English"), ("spanish","Spanish"), ("french","French"), ("geography","Geography"), ("history","History"), ("IT","IT"), ("sport_science","Sport Science")])
     marks = IntegerField("Marks")
-    submit = SubmitField("Edit Marks")
+    submit = SubmitField("Edit Marks")"""

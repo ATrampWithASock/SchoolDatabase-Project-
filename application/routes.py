@@ -46,15 +46,48 @@ def studentInformation(student_ID):
     return render_template("StudentInformation.html", record=data)
 
 
-@app.route("/addMarks/<int:student_ID>", methods=["GET", "POST"])
+"""@app.route("/marksTable")
+def marksTable():
+    marks = Marks.query.all()
+    return render_template("MarksTable.html", records=marks)"""
+
+
+"""@app.route("/addMarks/<int:student_ID>", methods=["GET", "POST"])
 def addMarks(student_ID):
-    form = Marks
-    student=Student.query.filter_by(student_ID=student_ID).first()
+    form = Marks()
+    student_ID = Student.query.filter_by(student_ID=student_ID).first()
     if request.method == "POST":
         subject=form.subject.data
         marks=form.marks.data
-        newmarks=Marks(subject=subject, marks=marks)
+        newmarks=Marks(student = student_ID, subject=subject, marks=marks)
         db.session.add(newmarks)
         db.session.commit()
-        return redirect("url_for(StudentInformation.html")
-    return render_template("InputMarks.html", form=form)
+        return redirect("StudentInformation.html")
+    return render_template("InputMarks.html", form=form)"""
+
+
+"""@app.route("/mAddMarks", methods=["GET", "POST"])
+def mAddMarks():
+    form = Marks()
+    if request.method == "POST":
+        student_ID=form.student_ID.data
+        subject=form.subject.data
+        marks=form.marks.data
+        newmarks=Marks(student = student_ID, subject=subject, marks=marks)
+        db.session.add(newmarks)
+        db.session.commit()
+        return redirect("MarksTable.html")
+    return render_template("InputMarks.html", form=form)"""
+
+
+"""@app.route("/editMarks/<int:mark_ID>", methods=["GET", "POST"])
+def editMarks(mark_ID):
+    form = EditMarks()
+    mark = Marks.query.filter_by(mark_ID-mark_ID).first()
+    if request.method == "POST":
+        mark.student_ID = form.student_ID.data
+        mark.subject = form.subject.data
+        mark.mark = form.marks.data
+        db.session.commit()
+        return redirect("{{ url_for('marksTable') }}")
+    return render_template("EditMarks.html", form=form)"""
