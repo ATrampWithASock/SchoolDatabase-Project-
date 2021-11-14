@@ -17,12 +17,15 @@
 
             <tr>
                 <td> {{ record.student_ID }} </td>
-                <td><a href=#> {{ record.name }} </a></td>
+                <td><a href="{{ url_for('studentInformation', student_ID=record.student_ID) }}"> {{ record.firstname }} {{ record.surname }} </a></td>
                 <td><a href="{{ url_for('editStudent', student_ID=record.student_ID) }}"> edit </a>
-                    <a href=#> delete </a></td>
+                    <a href="{{ url_for('deleteStudent', student_ID=record.student_ID) }}"> delete </a></td>
             </tr>
 
             {% endfor %}
         </table>
     </center>
+    <br>
+    <br>
+    <!---<p style="text-align: right;"><a href="{{ url_for('marksTable') }}"> all marks </a></p>-->
 </html>

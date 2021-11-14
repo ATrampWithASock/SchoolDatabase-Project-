@@ -1,0 +1,29 @@
+<html>
+    <a href="{{ url_for('home') }}"> home </a>
+    <center>
+        <h2>Marks</h2>
+        <br>
+        <br>
+        <br>
+        <a href="{{ url_for('mAddMarks') }}">Add Marks</a>
+        <table border=1>
+            <tr>
+                <td> Mark ID </td>
+                <td> Student ID </td>
+                <td> Subject </td>
+                <td> Marks </td>
+                <td> Operations </td>
+            </tr>
+            {% for record in records %}
+            <tr>
+                <td> {{ record.mark_ID }} </td>
+                <td> {{ record.student_ID }} </td>
+                <td> {{ record.subject }} </td>
+                <td> {{ record.marks }} </td>
+                <td> <a href=#> edit </a> 
+                     <a href=#> delete </a> </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</html>
