@@ -46,13 +46,13 @@ def studentInformation(student_ID):
     return render_template("StudentInformation.html", record=data)
 
 
-"""@app.route("/marksTable")
+@app.route("/marksTable")
 def marksTable():
     marks = Marks.query.all()
-    return render_template("MarksTable.html", records=marks)"""
+    return render_template("MarksTable.html", records=marks)
 
 
-"""@app.route("/addMarks/<int:student_ID>", methods=["GET", "POST"])
+@app.route("/addMarks/<int:student_ID>", methods=["GET", "POST"])
 def addMarks(student_ID):
     form = Marks()
     student_ID = Student.query.filter_by(student_ID=student_ID).first()
@@ -63,10 +63,10 @@ def addMarks(student_ID):
         db.session.add(newmarks)
         db.session.commit()
         return redirect("StudentInformation.html")
-    return render_template("InputMarks.html", form=form)"""
+    return render_template("InputMarks.html", form=form)
 
 
-"""@app.route("/mAddMarks", methods=["GET", "POST"])
+@app.route("/mAddMarks", methods=["GET", "POST"])
 def mAddMarks():
     form = Marks()
     if request.method == "POST":
@@ -77,10 +77,10 @@ def mAddMarks():
         db.session.add(newmarks)
         db.session.commit()
         return redirect("MarksTable.html")
-    return render_template("InputMarks.html", form=form)"""
+    return render_template("InputMarks.html", form=form)
 
 
-"""@app.route("/editMarks/<int:mark_ID>", methods=["GET", "POST"])
+@app.route("/editMarks/<int:mark_ID>", methods=["GET", "POST"])
 def editMarks(mark_ID):
     form = EditMarks()
     mark = Marks.query.filter_by(mark_ID-mark_ID).first()
@@ -90,4 +90,4 @@ def editMarks(mark_ID):
         mark.mark = form.marks.data
         db.session.commit()
         return redirect("{{ url_for('marksTable') }}")
-    return render_template("EditMarks.html", form=form)"""
+    return render_template("EditMarks.html", form=form)
