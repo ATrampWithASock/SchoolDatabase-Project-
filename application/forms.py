@@ -4,6 +4,7 @@ from wtforms import IntegerField, StringField, SelectField, SubmitField
 class AddStudent(FlaskForm):
     student_firstname = StringField("First Name")
     student_surname = StringField("Surname")
+    subject = SelectField("Subject", choices=[("Physics","Physics"), ("Chemistry","Chemistry"), ("Biology","Biology"), ("Maths","Maths"), ("English","English"), ("Spanish","Spanish"), ("French","French"), ("Geography","Geography"), ("History","History"), ("IT","IT"), ("Sport Science","Sport Science")])
     phone = StringField("Mobile Number")
     email = StringField("Email Address")
     address = StringField("Address")
@@ -20,6 +21,7 @@ class Marks(FlaskForm):
 class EditStudent(FlaskForm):
     student_firstname = StringField("First Name")
     student_surname = StringField("Surname")
+    subject = SelectField("Subject", choices=[("Physics","Physics"), ("Chemistry","Chemistry"), ("Biology","Biology"), ("Maths","Maths"), ("English","English"), ("Spanish","Spanish"), ("French","French"), ("Geography","Geography"), ("History","History"), ("IT","IT"), ("Sport Science","Sport Science")])
     phone = IntegerField("Mobile Number")
     email = StringField("Email Address")
     address = StringField("Address")
