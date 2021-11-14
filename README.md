@@ -2,11 +2,11 @@
 A Repository containing my files and commits for a school database for my first project.
 
 ## Contents
-1. [Database Design](databasedesign)
-2. [Risk Assessment](riskassess)
-3. [Jira Reports](jirareports)
-4. [Problems](problems)
-5. [Testing](testing)
+1. [Database Design] (#databasedesign)
+2. [Risk Assessment] (#riskassess)
+3. [Jira Reports] (#jirareports)
+4. [Problems] (#problems)
+5. [Testing] (#testing)
 
 
 ## Database Design <a name="databasedesign"></a>
