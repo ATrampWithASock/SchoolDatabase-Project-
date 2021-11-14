@@ -15,10 +15,11 @@ def addStudent():
     if request.method == 'POST':
         firstname=form.student_firstname.data
         surname=form.student_surname.data
+        subject=form.subject.data
         phone=form.phone.data
         email=form.email.data
         address=form.address.data
-        newstudent = Student(firstname=firstname, surname=surname, phone=phone, email=email, address=address)
+        newstudent = Student(firstname=firstname, surname=surname, subject=subject, phone=phone, email=email, address=address)
         db.session.add(newstudent)
         db.session.commit()
         return redirect("/")
@@ -32,6 +33,7 @@ def editStudent(student_ID):
     if request.method == "POST":
         student.firstname = form.student_firstname.data
         student.surname = form.student_surname.data
+        student.subject = form.subject.data
         student.phone = form.phone.data
         student.email = form.email.data
         student.address = form.address.data
@@ -52,6 +54,15 @@ def deleteStudent(student_ID):
 def studentInformation(student_ID):
     data = Student.query.filter_by(student_ID=student_ID).first()
     return render_template("StudentInformation.html", record=data)
+
+
+@app.route("/filterRecords", methods=["POST"])
+def filterRecords():
+    if request.form["subject"] == "all":
+        return redirect("/")
+    else:
+        data = Student.query.filter_by(subject=request.form["subject"]).all()
+        return render_template("Homepage.html",records=data)
 
 
 @app.route("/marksTable")

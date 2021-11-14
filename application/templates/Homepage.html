@@ -7,6 +7,23 @@
         <a href="{{ url_for('addStudent') }}">Add New Student</a>
         <br>
         <br>
+        <form action="{{url_for('filterRecords') }}" method="POST">
+            <select name="subject">
+                <option value="Physics"> Physics </option>
+                <option value="Chemistry"> Chemistry </option>
+                <option value="Biology"> Biology </option>
+                <option value="Maths"> Maths </option>
+                <option value="English"> English </option>
+                <option value="Spanish"> Spanish </option>
+                <option value="French"> French </option>
+                <option value="Geography"> Geography </option>
+                <option value="History"> History </option>
+                <option value="IT"> IT </option>
+                <option value="Sports Science"> Sports Science </option>
+                <option value="all"> All </option>
+            </select>
+            <input type="submit" value="Filter">
+        </form>
         <table border=1>
             <tr>
                 <td> Student ID </td>

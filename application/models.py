@@ -7,6 +7,7 @@ class Student(db.Model):
     student_ID = db.Column(db.Integer, primary_key = True)
     firstname = db.Column(db.String(50))
     surname = db.Column(db.String(50))
+    subject = db.Column(db.String(50))
     phone = db.Column(db.String(11))
     email = db.Column(db.String(50))
     address = db.Column(db.String(50))
